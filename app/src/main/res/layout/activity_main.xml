@@ -15,7 +15,7 @@
         android:orientation="horizontal">
 
         <fragment
-            android:id="@+id/fragment"
+            android:id="@+id/fragmentChapters"
             android:name="com.example.projetds.chapters"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -24,7 +24,7 @@
             />
 
         <fragment
-            android:id="@+id/fragment2"
+            android:id="@+id/fragmentQuestions"
             android:name="com.example.projetds.questions"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -32,7 +32,7 @@
             tools:layout="@layout/fragment_questions" />
 
         <fragment
-            android:id="@+id/fragment3"
+            android:id="@+id/fragmentAnswers"
             android:name="com.example.projetds.answers"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -40,7 +40,7 @@
             tools:layout="@layout/fragment_answers" />
 
         <fragment
-            android:id="@+id/fragment4"
+            android:id="@+id/fragmentScore"
             android:name="com.example.projetds.score"
             android:layout_width="0dp"
             android:layout_height="match_parent"
