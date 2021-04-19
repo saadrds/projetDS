@@ -33,7 +33,7 @@ class MainActivity : AppCompatActivity() {
         array.add(q2)
         array.add(q3)
         array.add(q4)
-        for(j in 0..3){
+        for(j in 0..3){//initializing an array of fragments and then adding them to the frame and then hiding them all
             arrayFragments.add(QuestionFragment(array[j],j+1))
 
             val trans = manager.beginTransaction()
@@ -41,6 +41,7 @@ class MainActivity : AppCompatActivity() {
             trans.hide(arrayFragments[j])
             trans.commit()
         }
+        //after that we show the 1st fragment while others are hidden
         val trans = manager.beginTransaction()
          trans.show(arrayFragments[0])
         trans.commit()
@@ -53,8 +54,7 @@ class MainActivity : AppCompatActivity() {
 // transaction
 
 // mettre les fragments
-       // val textT = findViewById<TextView>(R.id.textView5).text.toString()
-        if(i < 3){
+        if(i < array.count() -1){//hiding the previous fragment and showing the new one
             i++
             val trans = manager.beginTransaction()
             if(i != 0){
@@ -73,7 +73,7 @@ class MainActivity : AppCompatActivity() {
 // mettre les fragments
         // val textT = findViewById<TextView>(R.id.textView5).text.toString()
 
-        if(i > 0){
+        if(i > 0){//hiding the frag 'i' and showing the previous one i-1
 
             val trans = manager.beginTransaction()
             trans.hide(arrayFragments[i])
