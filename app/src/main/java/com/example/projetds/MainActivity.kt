@@ -92,7 +92,7 @@ class MainActivity : AppCompatActivity() {
         if(i == 0){//if i = 0 previous shouldnt be shown
             previousButton.setVisibility(View.GONE)
         }
-        else if(i == 8){//if i = 9 next shouldnt be shown
+        else if(i == array.count() -1){//if i = 9 next shouldnt be shown
             nextButton.setVisibility(View.GONE)
         }
         else{
