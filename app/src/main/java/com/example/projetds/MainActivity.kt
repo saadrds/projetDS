@@ -15,17 +15,17 @@ class MainActivity : AppCompatActivity() {
     val arrayFragments = ArrayList<QuestionFragment>()
     val manager = supportFragmentManager// Pour API >=19
 
-    val nextButton = binding.next
-    val previousButton = binding.previous
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
-        val view = binding.root
-        setContentView(view)
+        //val vieww = binding.root
+        //setContentView(vieww)
+        setContentView(R.layout.activity_main)
 
 
-        val q1 = Question("Quelle la somme de 1 + 1 ?","Mathematiques","3","29","1","1")
+       val q1 = Question("Quelle la somme de 1 + 1 ?","Mathematiques","3","29","1","1")
         val q2 = Question("Quel le produit  de 3 * 4 ?","Mathematiques","12","59","4","12")
         val q3 = Question("le factoriel de 3? ","Mathematiques","124","0","6","6")
         val q4 = Question("Quelle le somme  de 10 + 4 ?","Mathematiques","14","69","9","14")
@@ -41,9 +41,10 @@ class MainActivity : AppCompatActivity() {
             trans.hide(arrayFragments[j])
             trans.commit()
         }
-        //val trans = manager.beginTransaction()
-       // trans.show(arrayFragments[0])
-       // trans.commit()
+        val trans = manager.beginTransaction()
+         trans.show(arrayFragments[0])
+        trans.commit()
+        manageButtons()
 
     }
 
@@ -53,7 +54,7 @@ class MainActivity : AppCompatActivity() {
 
 // mettre les fragments
        // val textT = findViewById<TextView>(R.id.textView5).text.toString()
-       /* if(i < 3){
+        if(i < 3){
             i++
             val trans = manager.beginTransaction()
             if(i != 0){
@@ -62,8 +63,8 @@ class MainActivity : AppCompatActivity() {
             trans.show(arrayFragments[i])
             trans.commit();
 
-            //manageButtons()
-        }*/
+            manageButtons()
+        }
     }
 
     fun previous(view: View) {//click on button previous
@@ -71,7 +72,7 @@ class MainActivity : AppCompatActivity() {
 
 // mettre les fragments
         // val textT = findViewById<TextView>(R.id.textView5).text.toString()
-        /*
+
         if(i > 0){
 
             val trans = manager.beginTransaction()
@@ -81,15 +82,17 @@ class MainActivity : AppCompatActivity() {
 
             trans.commit();
 
-           // manageButtons()
-        }*/
+           manageButtons()
+        }
     }
 
-    /*fun manageButtons(){//function that show and hide previous and next buttons depends on which question is showed
+    fun manageButtons(){//function that show and hide previous and next buttons depends on which question is showed
+        val nextButton = findViewById<Button>(R.id.next)
+        val previousButton = findViewById<Button>(R.id.previous)
         if(i == 0){//if i = 0 previous shouldnt be shown
             previousButton.setVisibility(View.GONE)
         }
-        else if(i == 9){//if i = 9 next shouldnt be shown
+        else if(i == 8){//if i = 9 next shouldnt be shown
             nextButton.setVisibility(View.GONE)
         }
         else{
@@ -98,5 +101,5 @@ class MainActivity : AppCompatActivity() {
             if(previousButton.visibility == View.GONE)
                 previousButton.setVisibility(View.VISIBLE)
         }
-    }*/
+    }
 }
