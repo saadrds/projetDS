@@ -13,7 +13,7 @@ class MainActivity : AppCompatActivity(),Communicator {
     private lateinit var binding: ActivityMainBinding
     var Totalscore = 0;
     var i = 0
-    val array = ArrayList<Question>()
+    var array = ArrayList<Question>()
     val arrayFragments = ArrayList<QuestionFragment>()
     val manager = supportFragmentManager// Pour API >=19
     var answersTab = ArrayList<Int>()
@@ -40,6 +40,11 @@ class MainActivity : AppCompatActivity(),Communicator {
         array.add(q2)
         array.add(q3)
         array.add(q4)
+
+        /*val Dmanager = DataManager(this)
+        array = Dmanager.getAllItems()
+
+        Dmanager.close()*/
         for(j in 0..3){//initializing an array of fragments and then adding them to the frame and then hiding them all
             arrayFragments.add(QuestionFragment(array[j],j+1))
             answersTab.add(0)
@@ -68,6 +73,7 @@ class MainActivity : AppCompatActivity(),Communicator {
 // transaction
 
 // mettre les fragments
+        //fillDatabase()
         if(i < array.count() -1){//hiding the previous fragment and showing the new one
             i++
             val trans = manager.beginTransaction()
@@ -141,6 +147,15 @@ class MainActivity : AppCompatActivity(),Communicator {
 
     override fun setAnswer(valeur: Int) {
         answersTab[i] = valeur
+    }
+
+    fun fillDatabase() {
+        val manager = DataManager(this)
+        manager.add("aChaque a", "Intent", "AndroidManifest.xml", "Gradle", "MainActivity","AndroidManifest.xml")
+        /*manager.add("bChaque activité a une entrée dans le fichier : ?", "Intent", "AndroidManifest.xml", "Gradle", "MainActivity","AndroidManifest.xml")
+        manager.add("cChaque activité a une entrée dans le fichier : ?", "Intent", "AndroidManifest.xml", "Gradle", "MainActivity","AndroidManifest.xml")
+        manager.add("dChaque activité a une entrée dans le fichier : ?", "Intent", "AndroidManifest.xml", "Gradle", "MainActivity","AndroidManifest.xml")
+       */ manager.close()
     }
 
 }

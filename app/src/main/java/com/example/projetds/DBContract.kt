@@ -5,8 +5,8 @@ import android.provider.BaseColumns
 object DBContract {
     object Question : BaseColumns {
         const val TABLE_NAME = "Question"
-        const val QUESTION = "question"
-        const val CHAPITRE = "chappitre"
+        const val QUESTION = "aquestion"
+        const val CHAPITRE = "chapitre"
         const val CHOIX1 = "choix1"
         const val CHOIX2 = "choix2"
         const val CHOIX3 = "choix3"
