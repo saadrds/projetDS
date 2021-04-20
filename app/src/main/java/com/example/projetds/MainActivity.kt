@@ -8,12 +8,18 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.example.projetds.databinding.ActivityMainBinding
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(),Communicator {
+    lateinit var radioClick : RadioClick
     private lateinit var binding: ActivityMainBinding
+    var Totalscore = 0;
     var i = 0
     val array = ArrayList<Question>()
     val arrayFragments = ArrayList<QuestionFragment>()
     val manager = supportFragmentManager// Pour API >=19
+    var answersTab = ArrayList<Int>()
+    lateinit var submitButton:Button
+
+
 
 
 
@@ -23,6 +29,7 @@ class MainActivity : AppCompatActivity() {
         //val vieww = binding.root
         //setContentView(vieww)
         setContentView(R.layout.activity_main)
+        submitButton = findViewById<Button>(R.id.submit)
 
 
        val q1 = Question("Quelle la somme de 1 + 1 ?","Mathematiques","3","29","1","1")
@@ -35,6 +42,7 @@ class MainActivity : AppCompatActivity() {
         array.add(q4)
         for(j in 0..3){//initializing an array of fragments and then adding them to the frame and then hiding them all
             arrayFragments.add(QuestionFragment(array[j],j+1))
+            answersTab.add(0)
 
             val trans = manager.beginTransaction()
             trans.add(R.id.frameFrag, arrayFragments[j])
@@ -46,7 +54,13 @@ class MainActivity : AppCompatActivity() {
          trans.show(arrayFragments[0])
         trans.commit()
         manageButtons()
-
+        submitButton.setOnClickListener {
+            var total = 0
+            for (k in 0..3){
+                total += answersTab[k]
+            }
+            findViewById<TextView>(R.id.score).text = total.toString()
+        }
     }
 
 
@@ -89,17 +103,44 @@ class MainActivity : AppCompatActivity() {
     fun manageButtons(){//function that show and hide previous and next buttons depends on which question is showed
         val nextButton = findViewById<Button>(R.id.next)
         val previousButton = findViewById<Button>(R.id.previous)
+
+
+
         if(i == 0){//if i = 0 previous shouldnt be shown
             previousButton.setVisibility(View.GONE)
+            submitButton.setVisibility(View.GONE)
         }
         else if(i == array.count() -1){//if i = 9 next shouldnt be shown
             nextButton.setVisibility(View.GONE)
+            submitButton.setVisibility(View.VISIBLE)
+
         }
         else{
             if(nextButton.visibility == View.GONE)
                 nextButton.setVisibility(View.VISIBLE)
             if(previousButton.visibility == View.GONE)
                 previousButton.setVisibility(View.VISIBLE)
+            submitButton.setVisibility(View.GONE)
         }
     }
+
+    fun btn_click(view: View) {
+        radioClick = arrayFragments[i] as RadioClick
+        radioClick.myClickMethod(view)
+
+    }
+
+    override fun getScore(): Int {
+        return Totalscore
+    }
+
+
+    override fun setScore() {
+        Totalscore++
+    }
+
+    override fun setAnswer(valeur: Int) {
+        answersTab[i] = valeur
+    }
+
 }

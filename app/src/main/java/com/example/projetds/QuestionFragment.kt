@@ -19,7 +19,11 @@ private const val ARG_PARAM3 = "param3"
  * Use the [QuestionFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class QuestionFragment(val myQuestion : Question,val questionNUmber : Int) : Fragment() {
+class QuestionFragment(val myQuestion : Question,val questionNUmber : Int) : Fragment(),RadioClick{
+    private lateinit var mycommunicator : Communicator
+    fun btn_click(view: View) {
+
+    }
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -49,6 +53,37 @@ class QuestionFragment(val myQuestion : Question,val questionNUmber : Int) : Fra
         view?.findViewById<RadioButton>(R.id.radioButton1)?.text = myQuestion.choix1
         view?.findViewById<RadioButton>(R.id.radioButton2)?.text = myQuestion.choix2
         view?.findViewById<RadioButton>(R.id.radioButton3)?.text = myQuestion.choix3
+    }
+
+        override fun myClickMethod(v: View) {
+            mycommunicator = context as Communicator
+        if(v.id == R.id.radioButton1){
+            if(myQuestion.choix1 == myQuestion.choix_correct){
+                mycommunicator.setAnswer(1);
+            }
+            else{
+                mycommunicator.setAnswer(0);
+            }
+        }
+
+        if(v.id == R.id.radioButton2){
+                if(myQuestion.choix2 == myQuestion.choix_correct){
+                    mycommunicator.setAnswer(1);
+                }
+                else{
+                    mycommunicator.setAnswer(0);
+                }
+        }
+            if(v.id == R.id.radioButton3){
+                if(myQuestion.choix3 == myQuestion.choix_correct){
+                    mycommunicator.setAnswer(1);
+                }
+                else{
+                    mycommunicator.setAnswer(0);
+                }
+            }
+
+
     }
     /*companion object {
         /**

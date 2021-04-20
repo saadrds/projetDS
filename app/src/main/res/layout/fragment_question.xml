@@ -34,18 +34,21 @@
 
             <RadioButton
                 android:id="@+id/radioButton1"
+                android:onClick="btn_click"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="RadioButton" />
 
             <RadioButton
                 android:id="@+id/radioButton2"
+                android:onClick="btn_click"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="RadioButton" />
 
             <RadioButton
                 android:id="@+id/radioButton3"
+                android:onClick="btn_click"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="RadioButton" />
