@@ -1,5 +1,6 @@
 package com.example.projetds
 
+import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -18,6 +19,7 @@ class MainActivity : AppCompatActivity(),Communicator {
     val manager = supportFragmentManager// Pour API >=19
     var answersTab = ArrayList<Int>()
     lateinit var submitButton:Button
+    val currentAc = this
 
 
 
@@ -32,20 +34,25 @@ class MainActivity : AppCompatActivity(),Communicator {
         submitButton = findViewById<Button>(R.id.submit)
 
 
-       val q1 = Question("Quelle la somme de 1 + 1 ?","Mathematiques","3","29","1","1")
+       /*val q1 = Question("Quelle la somme de 1 + 1 ?","Mathematiques","3","29","1","1")
         val q2 = Question("Quel le produit  de 3 * 4 ?","Mathematiques","12","59","4","12")
         val q3 = Question("le factoriel de 3? ","Mathematiques","124","0","6","6")
         val q4 = Question("Quelle le somme  de 10 + 4 ?","Mathematiques","14","69","9","14")
         array.add(q1)
         array.add(q2)
         array.add(q3)
-        array.add(q4)
-
+        array.add(q4)*/
+        val myManager = DataManager(this)
+        myManager.fillData()
+        myManager.close()
+        val my2Manager = DataManager(this)
+        array = my2Manager.getAllItems()
+        my2Manager.close()
         /*val Dmanager = DataManager(this)
         array = Dmanager.getAllItems()
 
         Dmanager.close()*/
-        for(j in 0..3){//initializing an array of fragments and then adding them to the frame and then hiding them all
+        for(j in 0..array.count()-1){//initializing an array of fragments and then adding them to the frame and then hiding them all
             arrayFragments.add(QuestionFragment(array[j],j+1))
             answersTab.add(0)
 
@@ -73,7 +80,8 @@ class MainActivity : AppCompatActivity(),Communicator {
 // transaction
 
 // mettre les fragments
-        //fillDatabase()
+
+
         if(i < array.count() -1){//hiding the previous fragment and showing the new one
             i++
             val trans = manager.beginTransaction()
@@ -149,13 +157,16 @@ class MainActivity : AppCompatActivity(),Communicator {
         answersTab[i] = valeur
     }
 
-    fun fillDatabase() {
+    fun fillDatabase(){
         val manager = DataManager(this)
         manager.add("aChaque a", "Intent", "AndroidManifest.xml", "Gradle", "MainActivity","AndroidManifest.xml")
-        /*manager.add("bChaque activité a une entrée dans le fichier : ?", "Intent", "AndroidManifest.xml", "Gradle", "MainActivity","AndroidManifest.xml")
+        manager.add("bChaque activité a une entrée dans le fichier : ?", "Intent", "AndroidManifest.xml", "Gradle", "MainActivity","AndroidManifest.xml")
         manager.add("cChaque activité a une entrée dans le fichier : ?", "Intent", "AndroidManifest.xml", "Gradle", "MainActivity","AndroidManifest.xml")
         manager.add("dChaque activité a une entrée dans le fichier : ?", "Intent", "AndroidManifest.xml", "Gradle", "MainActivity","AndroidManifest.xml")
-       */ manager.close()
+        manager.close()
     }
+
+
+
 
 }

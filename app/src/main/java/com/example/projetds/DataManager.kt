@@ -2,13 +2,22 @@ package com.example.projetds
 
 import android.content.ContentValues
 import android.content.Context
-import java.lang.Math.random
 
 class DataManager(val context: Context) {
 
 
     val helper = myDBHelper(context)
 
+    fun fillData(){
+        val db = helper.readableDatabase
+        val cursor = db.query(DBContract.Question.TABLE_NAME, null, null, null, null, null, null)
+        if (cursor.count == 0){
+            add("aChaque a", "Intent", "AndroidManifest.xml", "Gradle", "MainActivity","AndroidManifest.xml")
+            add("bChaque activité a une entrée dans le fichier : ?", "Intent", "AndroidManifest.xml", "Gradle", "MainActivity","AndroidManifest.xml")
+            add("cChaque activité a une entrée dans le fichier : ?", "Intent", "AndroidManifest.xml", "Gradle", "MainActivity","AndroidManifest.xml")
+            add("dChaque activité a une entrée dans le fichier : ?", "Intent", "AndroidManifest.xml", "Gradle", "MainActivity","AndroidManifest.xml")
+        }
+    }
     fun add(question: String, chapitre: String, choix1: String, choix2: String, choix3: String, choix_correct: String) {
         val dataBase = helper.writableDatabase
         val values = ContentValues()
@@ -53,7 +62,7 @@ class DataManager(val context: Context) {
         val selectionArgs = arrayOf(chapitre)
         val result = ArrayList<Question>()
         val dataBase = helper.readableDatabase
-        val cursor = dataBase?.query(DBContract.Question.TABLE_NAME,null, selection, selectionArgs, null, null,"RANDOM() limit 10")
+        val cursor = dataBase?.query(DBContract.Question.TABLE_NAME, null, selection, selectionArgs, null, null, "RANDOM() limit 10")
         while (cursor?.moveToNext()!!) {
             //val id = cursor.getInt(cursor.getColumnIndex(BaseColumns._ID))
             val question = cursor.getString(cursor.getColumnIndex(DBContract.Question.QUESTION))
