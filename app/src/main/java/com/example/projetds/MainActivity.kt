@@ -33,6 +33,9 @@ class MainActivity : AppCompatActivity(),Communicator {
         setContentView(R.layout.activity_main)
         submitButton = findViewById<Button>(R.id.submit)
 
+        val intent = intent
+        val chapter = intent.getStringExtra("chapter")!!
+
 
        /*val q1 = Question("Quelle la somme de 1 + 1 ?","Mathematiques","3","29","1","1")
         val q2 = Question("Quel le produit  de 3 * 4 ?","Mathematiques","12","59","4","12")
@@ -46,7 +49,7 @@ class MainActivity : AppCompatActivity(),Communicator {
         myManager.fillData()
         myManager.close()
         val my2Manager = DataManager(this)
-        array = my2Manager.getAllItems()
+        array = my2Manager.getTenRandom(chapter)
         my2Manager.close()
         /*val Dmanager = DataManager(this)
         array = Dmanager.getAllItems()
