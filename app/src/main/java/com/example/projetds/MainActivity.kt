@@ -7,27 +7,21 @@ import android.view.View
 import android.widget.Button
 import android.widget.TextView
 import androidx.fragment.app.Fragment
-import com.example.projetds.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity(),Communicator {
     lateinit var radioClick : RadioClick
-    private lateinit var binding: ActivityMainBinding
     var Totalscore = 0;
     var i = 0
-    var array = ArrayList<Question>()
-    val arrayFragments = ArrayList<QuestionFragment>()
+    var array = ArrayList<Question>() // tableau des questions
+    val arrayFragments = ArrayList<QuestionFragment>() // tableau des fragements
     val manager = supportFragmentManager// Pour API >=19
     var answersTab = ArrayList<Int>()
     lateinit var submitButton:Button
     val currentAc = this
 
 
-
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
         //val vieww = binding.root
         //setContentView(vieww)
         setContentView(R.layout.activity_main)
@@ -37,14 +31,7 @@ class MainActivity : AppCompatActivity(),Communicator {
         val chapter = intent.getStringExtra("chapter")!!
 
 
-       /*val q1 = Question("Quelle la somme de 1 + 1 ?","Mathematiques","3","29","1","1")
-        val q2 = Question("Quel le produit  de 3 * 4 ?","Mathematiques","12","59","4","12")
-        val q3 = Question("le factoriel de 3? ","Mathematiques","124","0","6","6")
-        val q4 = Question("Quelle le somme  de 10 + 4 ?","Mathematiques","14","69","9","14")
-        array.add(q1)
-        array.add(q2)
-        array.add(q3)
-        array.add(q4)*/
+
         val myManager = DataManager(this)
         myManager.fillData()
         myManager.close()
@@ -69,12 +56,33 @@ class MainActivity : AppCompatActivity(),Communicator {
          trans.show(arrayFragments[0])
         trans.commit()
         manageButtons()
+
+
         submitButton.setOnClickListener {
+            val nextButton = findViewById<Button>(R.id.next)
+            val previousButton = findViewById<Button>(R.id.previous)
+
+            previousButton.setVisibility(View.GONE)
+            nextButton.setVisibility(View.GONE)
+            submitButton.setVisibility(View.GONE)
+
             var total = 0
             for (k in 0..3){
                 total += answersTab[k]
             }
             findViewById<TextView>(R.id.score).text = total.toString()
+
+            for(j in 0..array.count()-1){
+                val trans = manager.beginTransaction()
+                trans.hide(arrayFragments[j])
+                trans.commit();
+            }
+
+
+            val trans = manager.beginTransaction()
+            trans.add(R.id.frameFrag, answers(array))
+            trans.commit()
+
         }
     }
 
@@ -121,8 +129,6 @@ class MainActivity : AppCompatActivity(),Communicator {
         val nextButton = findViewById<Button>(R.id.next)
         val previousButton = findViewById<Button>(R.id.previous)
 
-
-
         if(i == 0){//if i = 0 previous shouldnt be shown
             previousButton.setVisibility(View.GONE)
             submitButton.setVisibility(View.GONE)
@@ -144,7 +150,6 @@ class MainActivity : AppCompatActivity(),Communicator {
     fun btn_click(view: View) {
         radioClick = arrayFragments[i] as RadioClick
         radioClick.myClickMethod(view)
-
     }
 
     override fun getScore(): Int {
@@ -160,16 +165,8 @@ class MainActivity : AppCompatActivity(),Communicator {
         answersTab[i] = valeur
     }
 
-    fun fillDatabase(){
-        val manager = DataManager(this)
-        manager.add("aChaque a", "Intent", "AndroidManifest.xml", "Gradle", "MainActivity","AndroidManifest.xml")
-        manager.add("bChaque activité a une entrée dans le fichier : ?", "Intent", "AndroidManifest.xml", "Gradle", "MainActivity","AndroidManifest.xml")
-        manager.add("cChaque activité a une entrée dans le fichier : ?", "Intent", "AndroidManifest.xml", "Gradle", "MainActivity","AndroidManifest.xml")
-        manager.add("dChaque activité a une entrée dans le fichier : ?", "Intent", "AndroidManifest.xml", "Gradle", "MainActivity","AndroidManifest.xml")
-        manager.close()
+    override fun setAnswerChoice(answer: String) {
+        array[i].selectedValue = answer
     }
-
-
-
 
 }

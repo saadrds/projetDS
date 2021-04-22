@@ -58,6 +58,7 @@ class QuestionFragment(val myQuestion : Question,val questionNUmber : Int) : Fra
         override fun myClickMethod(v: View) {
             mycommunicator = context as Communicator
         if(v.id == R.id.radioButton1){
+            mycommunicator.setAnswerChoice(myQuestion.choix1)
             if(myQuestion.choix1 == myQuestion.choix_correct){
                 mycommunicator.setAnswer(1);
             }
@@ -67,7 +68,8 @@ class QuestionFragment(val myQuestion : Question,val questionNUmber : Int) : Fra
         }
 
         if(v.id == R.id.radioButton2){
-                if(myQuestion.choix2 == myQuestion.choix_correct){
+            mycommunicator.setAnswerChoice(myQuestion.choix2)
+            if(myQuestion.choix2 == myQuestion.choix_correct){
                     mycommunicator.setAnswer(1);
                 }
                 else{
@@ -75,6 +77,7 @@ class QuestionFragment(val myQuestion : Question,val questionNUmber : Int) : Fra
                 }
         }
             if(v.id == R.id.radioButton3){
+                mycommunicator.setAnswerChoice(myQuestion.choix3)
                 if(myQuestion.choix3 == myQuestion.choix_correct){
                     mycommunicator.setAnswer(1);
                 }

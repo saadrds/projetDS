@@ -7,6 +7,8 @@ interface Communicator {
     fun getScore():Int
     fun setScore()
     fun setAnswer(valeur:Int)
+    fun setAnswerChoice(answer : String)
+
 
 
 }
