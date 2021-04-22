@@ -6,16 +6,17 @@
     android:orientation="vertical"
     >
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/listR2"
-        android:layout_width="match_parent"
-        android:layout_height="680dp">
-
-    </androidx.recyclerview.widget.RecyclerView>
-
     <Button
         android:id="@+id/button5"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Button" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/listR2"
+        android:layout_width="match_parent"
+        android:layout_height="563dp">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
 </LinearLayout>

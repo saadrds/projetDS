@@ -43,7 +43,7 @@ class answers(val array : ArrayList<Question>) : Fragment() {
         super.onActivityCreated(savedInstanceState)
 
         val mylist = view?.findViewById<RecyclerView>(R.id.listR2)
-        val adap =  QuesAdapter(array)
+        val adap = context?.let { QuesAdapter(it,array) }
         if (mylist != null) {
             mylist.adapter = adap
         }

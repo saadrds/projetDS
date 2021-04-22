@@ -8,7 +8,7 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 
-class MainActivity : AppCompatActivity(),Communicator {
+class MainActivity : AppCompatActivity(),Communicator,QuesAdapter.ItemCliked {
     lateinit var radioClick : RadioClick
     var Totalscore = 0;
     var i = 0
@@ -16,6 +16,7 @@ class MainActivity : AppCompatActivity(),Communicator {
     val arrayFragments = ArrayList<QuestionFragment>() // tableau des fragements
     val manager = supportFragmentManager// Pour API >=19
     var answersTab = ArrayList<Int>()
+    lateinit var answersFrag:Fragment
     lateinit var submitButton:Button
     val currentAc = this
 
@@ -80,7 +81,8 @@ class MainActivity : AppCompatActivity(),Communicator {
 
 
             val trans = manager.beginTransaction()
-            trans.add(R.id.frameFrag, answers(array))
+            answersFrag = answers(array)
+            trans.add(R.id.frameFrag, answersFrag)
             trans.commit()
 
         }
@@ -167,6 +169,19 @@ class MainActivity : AppCompatActivity(),Communicator {
 
     override fun setAnswerChoice(answer: String) {
         array[i].selectedValue = answer
+    }
+
+    override fun onItemClicked(index: Int) {
+        i = index
+        val trans = manager.beginTransaction()
+        trans.hide(answersFrag)
+        trans.show(arrayFragments[i])
+        trans.commit();
+
+        manageButtons()
+
+
+
     }
 
 }
