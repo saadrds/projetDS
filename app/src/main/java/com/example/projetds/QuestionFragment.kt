@@ -49,7 +49,7 @@ class QuestionFragment(val myQuestion : Question,val questionNUmber : Int) : Fra
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         view?.findViewById<TextView>(R.id.question_title)?.text = myQuestion.question
-        view?.findViewById<TextView>(R.id.question_number)?.text = questionNUmber.toString()
+        view?.findViewById<TextView>(R.id.question_number)?.text = questionNUmber.toString() + "."
         view?.findViewById<RadioButton>(R.id.radioButton1)?.text = myQuestion.choix1
         view?.findViewById<RadioButton>(R.id.radioButton2)?.text = myQuestion.choix2
         view?.findViewById<RadioButton>(R.id.radioButton3)?.text = myQuestion.choix3
@@ -57,7 +57,7 @@ class QuestionFragment(val myQuestion : Question,val questionNUmber : Int) : Fra
 
         override fun myClickMethod(v: View) {
             mycommunicator = context as Communicator
-        if(v.id == R.id.radioButton1){
+           if(v.id == R.id.radioButton1){
             mycommunicator.setAnswerChoice(myQuestion.choix1)
             if(myQuestion.choix1 == myQuestion.choix_correct){
                 mycommunicator.setAnswer(1);
