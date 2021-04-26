@@ -12,6 +12,7 @@ class MainActivity3 : AppCompatActivity() {
         setContentView(R.layout.activity_main3)
         var myscore = findViewById<TextView>(R.id.finalScore)
         var image = findViewById<ImageView>(R.id.imageView)
+        val manager = supportFragmentManager
         val b2 = intent.extras
         val myArrayQuestions = b2?.getParcelableArrayList<Question>("questionsArray")
         if (b2 != null) {
@@ -29,9 +30,9 @@ class MainActivity3 : AppCompatActivity() {
         }
         val frag1 = recapList(myArrayQuestions!!)
         findViewById<Button>(R.id.showRecap).setOnClickListener {
-            val manager = supportFragmentManager
+
             val trans = manager.beginTransaction()
-            trans.add(R.id.frameFrag,frag1)
+            trans.add(R.id.recapFrame,frag1)
             trans.commit()
         }
     }
