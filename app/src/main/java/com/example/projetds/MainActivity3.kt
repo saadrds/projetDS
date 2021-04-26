@@ -1,6 +1,7 @@
 package com.example.projetds
 
 import android.os.Bundle
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
@@ -12,6 +13,7 @@ class MainActivity3 : AppCompatActivity() {
         var myscore = findViewById<TextView>(R.id.finalScore)
         var image = findViewById<ImageView>(R.id.imageView)
         val b2 = intent.extras
+        val myArrayQuestions = b2?.getParcelableArrayList<Question>("questionsArray")
         if (b2 != null) {
            var myFinalscore =  b2.getInt("score")
             if(myFinalscore <= 5){
@@ -24,5 +26,13 @@ class MainActivity3 : AppCompatActivity() {
 
             }
 
+        }
+        val frag1 = recapList(myArrayQuestions!!)
+        findViewById<Button>(R.id.showRecap).setOnClickListener {
+            val manager = supportFragmentManager
+            val trans = manager.beginTransaction()
+            trans.add(R.id.frameFrag,frag1)
+            trans.commit()
+        }
     }
-}}
+}

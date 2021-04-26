@@ -73,8 +73,8 @@ MainActivity : AppCompatActivity(),Communicator,QuesAdapter.ItemCliked {
             previousButton.setVisibility(View.GONE)
             nextButton.setVisibility(View.GONE)
             submitButton.setVisibility(View.GONE)
-
-            for (k in 0..3){
+             total = 0
+            for (k in 0..array.count()-1){
                 total += answersTab[k]
             }
            // findViewById<TextView>(R.id.score).text = total.toString()
@@ -96,6 +96,7 @@ MainActivity : AppCompatActivity(),Communicator,QuesAdapter.ItemCliked {
             val intent = Intent(this, MainActivity3::class.java)
             val b1 = Bundle()
             b1.putInt("score", total)
+            b1.putParcelableArrayList("questionsArray",array)
             intent.putExtras(b1)
             startActivity(intent)
         }
@@ -149,6 +150,7 @@ MainActivity : AppCompatActivity(),Communicator,QuesAdapter.ItemCliked {
         resultat.setVisibility(View.GONE)
 
         if(i == 0){//if i = 0 previous shouldnt be shown
+            nextButton.setVisibility(View.VISIBLE)
             previousButton.setVisibility(View.GONE)
             submitButton.setVisibility(View.GONE)
         }

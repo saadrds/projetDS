@@ -6,6 +6,17 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity3">
 
+    <Button
+        android:id="@+id/showRecap"
+        android:layout_width="247dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="16dp"
+        android:text="Show Recap"
+        app:backgroundTint="#009688"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
     <TextView
         android:id="@+id/finalScore"
         android:layout_width="wrap_content"
@@ -13,7 +24,7 @@
         android:fontFamily="sans-serif-black"
         android:text="TextView"
         android:textColor="#090909"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/showRecap"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
@@ -28,4 +39,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:srcCompat="@tools:sample/avatars" />
+
+    <FrameLayout
+        android:id="@+id/recapFrame"
+        android:layout_width="411dp"
+        android:layout_height="646dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </FrameLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

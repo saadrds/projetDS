@@ -14,8 +14,8 @@ class QuesAdapter(val context: Context, val list : ArrayList <Question>): Recycl
     }
         inner class FilleHolder(itemView: View) : RecyclerView.ViewHolder(itemView) // inner classe filleHolder qui herite de RecyclerView.ViewHolder
         {
-            val text1 : TextView = itemView.findViewById<TextView>(R.id.quest) // récupération du text view spécifié pour le mot
-            val text2 : TextView = itemView.findViewById<TextView>(R.id.rep) // récupération du text view spécifié pour la définition
+            val text1 : TextView = itemView.findViewById<TextView>(R.id.Recap) // récupération du text view spécifié pour le mot
+            val text2 : TextView = itemView.findViewById<TextView>(R.id.recap1) // récupération du text view spécifié pour la définition
             init {
                 // Ensuite pour chaque ligne dans splited, on dévise chaque case pour séparer chaque mot de sa définition et cela par ":"
                 itemView.setOnClickListener { view -> myActivity.onItemClicked(list.indexOf(view.tag as Question))  }
@@ -35,7 +35,7 @@ class QuesAdapter(val context: Context, val list : ArrayList <Question>): Recycl
 
         override fun onBindViewHolder(holder: FilleHolder, position: Int) {
             val currentDesc = list[position]
-            holder.text1.text = currentDesc.question
+            holder.text1.text = (position + 1).toString() + ". " + currentDesc.question
             holder.text2.text = currentDesc.selectedValue
             holder.itemView.tag = list[position]
             // holder.text2.setMovementMethod(ScrollingMovementMethod())
