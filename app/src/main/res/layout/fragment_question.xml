@@ -29,8 +29,8 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <RadioGroup
-            android:layout_width="91dp"
-            android:layout_height="142dp"
+            android:layout_width="140dp"
+            android:layout_height="141dp"
             android:layout_marginStart="24dp"
             android:layout_marginLeft="24dp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -40,21 +40,21 @@
 
             <RadioButton
                 android:id="@+id/radioButton1"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:onClick="btn_click"
                 android:text="RadioButton" />
 
             <RadioButton
                 android:id="@+id/radioButton2"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="38dp"
                 android:onClick="btn_click"
                 android:text="RadioButton" />
 
             <RadioButton
                 android:id="@+id/radioButton3"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:onClick="btn_click"
                 android:text="RadioButton" />

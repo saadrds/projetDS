@@ -19,7 +19,7 @@
         app:layout_constraintHorizontal_bias="0.44"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView6"
-        app:layout_constraintVertical_bias="0.782" />
+        app:layout_constraintVertical_bias="0.993" />
 
     <TextView
         android:id="@+id/textView5"
@@ -44,10 +44,9 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/Intent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.489"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView5"
-        app:layout_constraintVertical_bias="0.345" />
+        app:layout_constraintVertical_bias="0.127" />
 
     <Button
         android:id="@+id/Intent"
