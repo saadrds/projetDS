@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="180sp"
+    android:layout_height="220sp"
     android:layout_marginLeft="8dp"
     android:layout_marginTop="5dp"
     android:layout_marginRight="8dp"
@@ -23,21 +23,13 @@
 
         android:id="@+id/Recap"
         android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="3dp"
-        android:layout_marginLeft="3dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="3dp"
-        android:layout_marginRight="3dp"
-        android:layout_marginBottom="3dp"
+        android:layout_height="wrap_content"
         android:fontFamily="sans-serif-black"
         android:paddingLeft="20dp"
         android:paddingTop="15dp"
         android:paddingRight="10dp"
         android:text="TextView"
         android:textColor="#000000"
-        app:layout_constraintBottom_toTopOf="@+id/recap1"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -46,45 +38,65 @@
         android:id="@+id/recap1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="5dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
         android:paddingLeft="20dp"
         android:paddingTop="15dp"
         android:text="TextView"
-        android:textColor="#A1F10606"
+        android:textColor="#000"
         app:layout_constraintBottom_toTopOf="@+id/recap2"
-        app:layout_constraintStart_toStartOf="@+id/recap2"
-        app:layout_constraintTop_toBottomOf="@+id/Recap" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Recap"
+        app:layout_constraintVertical_bias="0.196" />
 
     <TextView
 
         android:id="@+id/recap2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="3dp"
-        android:layout_marginRight="3dp"
-        android:layout_marginBottom="3dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginBottom="8dp"
         android:paddingLeft="20dp"
         android:paddingTop="15dp"
         android:text="TextView"
-        android:textColor="#A1F10606"
+        android:textColor="#000"
         app:layout_constraintBottom_toTopOf="@+id/recap3"
-        app:layout_constraintEnd_toEndOf="@+id/recap3"
-        app:layout_constraintTop_toBottomOf="@+id/recap1" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
 
         android:id="@+id/recap3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
-        android:layout_marginLeft="36dp"
-        android:layout_marginBottom="11dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginBottom="60dp"
         android:paddingLeft="20dp"
         android:paddingTop="15dp"
         android:text="TextView"
-        android:textColor="#A1F10606"
+        android:textColor="#000"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/recap2" />
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="selected value : "
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/selectedRecap"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginBottom="16dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView3" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

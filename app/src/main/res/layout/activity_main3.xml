@@ -7,6 +7,18 @@
     tools:context=".MainActivity3">
 
     <Button
+        android:id="@+id/showFinalScore"
+        android:layout_width="240dp"
+        android:layout_height="46dp"
+        android:layout_marginBottom="16dp"
+        android:text="Show Score"
+        app:backgroundTint="#955670"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.479"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
         android:id="@+id/showRecap"
         android:layout_width="247dp"
         android:layout_height="48dp"
@@ -20,8 +32,8 @@
 
     <FrameLayout
         android:id="@+id/recapFrame"
-        android:layout_width="415dp"
-        android:layout_height="625dp"
+        android:layout_width="408dp"
+        android:layout_height="594dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 

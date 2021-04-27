@@ -41,28 +41,17 @@ class ResultFragment( var myscore: Int ) : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        var score = view?.findViewById<TextView>(R.id.finalScore)
+        var score = view?.findViewById<TextView>(R.id.textView)
         var image = view?.findViewById<ImageView>(R.id.imageView)
 
         if(myscore <= 5){
-            if (myscore != null) {
-                if (score != null) {
-                    score.text = " You failed the exam :( , Votre score est :  " + myscore.toString()
-                }
+            score!!.text = " You failed the exam :( , Votre score est :  " + myscore.toString()
+            image!!.setImageResource(R.drawable.failed)
             }
-            if (image != null) {
-                image.setImageResource(R.drawable.failed)
-            }
-        }
+
         else{
-            if (myscore != null) {
-                if (score != null) {
-                    score.text = " Congraaatss!! Votre score est :  " + myscore.toString()
-                }
-            }
-            if (image != null) {
-                image.setImageResource(R.drawable.pass)
-            }
+            score!!.text = " Congraaatss!! Votre score est :  " + myscore.toString()
+            image!!.setImageResource(R.drawable.pass)
 
         }
 
