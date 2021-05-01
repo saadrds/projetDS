@@ -38,12 +38,13 @@ class RecapAdapter(val context: Context, val list : ArrayList <Question>): Recyc
         if(currentDesc.choix1 == currentDesc.choix_correct){
             holder.recap1.setTextColor(Color.GREEN)
         }
-        else if(currentDesc.choix2 == currentDesc.choix_correct){
+        if(currentDesc.choix2 == currentDesc.choix_correct){
             holder.recap2.setTextColor(Color.GREEN)
         }
-        else{
+        if(currentDesc.choix3 == currentDesc.choix_correct){
             holder.recap3.setTextColor(Color.GREEN)
         }
+
         if(currentDesc.selectedValue == currentDesc.choix_correct){
             holder.selectedRecap.setBackgroundColor(Color.GREEN)
         }
