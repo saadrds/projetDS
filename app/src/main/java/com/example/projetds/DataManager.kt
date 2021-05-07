@@ -46,6 +46,26 @@ class DataManager(val context: Context) {
             add("Pour inserer dans la base de donnée on utilise :", "Stockage et Sqlite", "insert()", "putInto()", "insertInto()","insert()")
             add("Pour regarder une ligne dans le curseur on utilise", "Stockage et Sqlite", "Next()", "moveToNext()", "NextElement()","moveToNext()")
 
+            //Fragments
+            add("La premiere methode pour lancer un Fragment?", "Fragments", "OnDestroy()", "OnCreate()", "OnAttach()","OnAttach()")
+            add("La derniere methode pour un Fragment?", "Fragments", "OnDetach()", "OnCreate()", "OnDestroy()","OnDetach()")
+            add("Comment les Fragment Communiquent ?", "Fragments", "Directement", "avec Interface", "Bundle","avec Interface")
+            add("Les Fragment Prévus dans le Layout s'ajoutent?", "Fragments", "Statiquement", "Dynamiquement", "Automatiquement","Statiquement")
+            add("Definir les Fragment Dynamiquement, On utilise?", "Fragments", "FragmentDynamique", "FragmentManager", "FragmentSetter","FragmentManager")
+            add("un Fragment doit hériter de la classe ?", "Fragments", "Fragment", "AndroidFragment", "JavaFragment","Fragment")
+            add("add/delete de fragments se fait à l’aide?", "Fragments", "methode de la classe Fragment", "interface de l'activity", "des transactions","des transactions")
+            add("pour remplacer un Fragment ?", "Fragments", "replace()", "remove() puis add()", "update()","replace()")
+            add("pour lier le layout au Fragment on Redéfinit?", "Fragments", "onCreate()", "onCreateView()", "OnFragmentCreate()","onCreateView()")
+            add("pour efectuer une transaction ?", "Fragments", "trans.applicate()", "trans.done()", "trans.commit()","trans.commit()")
+            add("pour ajouter un Fragment ?", "Fragments", "R.id.frag_liste.add(frag1)", "trans.add(R.id.frag_liste, frag1)", "trans.add(frag1)","trans.add(R.id.frag_liste, frag1)")
+            add("Un fragment doit avoir un identifiant ?", "Fragments", "Non", "Oui", "pour les fragments de la meme classe","Oui")
+            add("Les fragments se comportent comme?", "Fragments", "Threads", "Bundles", "RecyclerView","Threads")
+            add("Les fragments se comportent comme?", "Fragments", "Threads", "Bundles", "RecyclerView","Threads")
+            add("Les fragments se comportent comme?", "Fragments", "Threads", "Bundles", "RecyclerView","Threads")
+
+
+
+
 
 
 

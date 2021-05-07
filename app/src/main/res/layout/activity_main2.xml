@@ -7,24 +7,11 @@
     tools:context=".MainActivity2">
 
     <Button
-        android:id="@+id/stockage3"
-        android:layout_width="200sp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="74dp"
-        android:text="chap4"
-        android:textColor="#0B0A0A"
-        app:backgroundTint="#00BCD4"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.44"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/button" />
-
-    <Button
-        android:id="@+id/button"
+        android:id="@+id/FragmentsButton"
         android:layout_width="200sp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="chap3"
+        android:text="Fragments"
         android:textColor="#0B0A0A"
         app:backgroundTint="#00BCD4"
         app:layout_constraintEnd_toEndOf="parent"

@@ -1,6 +1,7 @@
 package com.example.projetds
 
 import android.content.Intent
+import android.media.MediaPlayer
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
@@ -66,6 +67,8 @@ MainActivity : AppCompatActivity(),Communicator,QuesAdapter.ItemCliked {
 
 
         submitButton.setOnClickListener {
+            val mp = MediaPlayer.create(this, R.raw.b_click)
+            mp.start()
             val nextButton = findViewById<Button>(R.id.next)
             val previousButton = findViewById<Button>(R.id.previous)
             resButton.setVisibility(View.VISIBLE)
@@ -108,7 +111,8 @@ MainActivity : AppCompatActivity(),Communicator,QuesAdapter.ItemCliked {
 
 // mettre les fragments
 
-
+        val mp = MediaPlayer.create(this, R.raw.b3_click)
+        mp.start()
         if(i < array.count() -1){//hiding the previous fragment and showing the new one
             i++
             val trans = manager.beginTransaction()
@@ -127,7 +131,8 @@ MainActivity : AppCompatActivity(),Communicator,QuesAdapter.ItemCliked {
 
 // mettre les fragments
         // val textT = findViewById<TextView>(R.id.textView5).text.toString()
-
+        val mp = MediaPlayer.create(this, R.raw.b3_click)
+        mp.start()
         if(i > 0){//hiding the frag 'i' and showing the previous one i-1
 
             val trans = manager.beginTransaction()
@@ -192,6 +197,7 @@ MainActivity : AppCompatActivity(),Communicator,QuesAdapter.ItemCliked {
     }
 
     override fun onItemClicked(index: Int) {
+
         i = index
         val trans = manager.beginTransaction()
         trans.hide(answersFrag)
