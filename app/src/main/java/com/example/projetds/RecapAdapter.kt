@@ -37,18 +37,27 @@ class RecapAdapter(val context: Context, val list : ArrayList <Question>): Recyc
 
         if(currentDesc.choix1 == currentDesc.choix_correct){
             holder.recap1.setTextColor(Color.GREEN)
-        }
-        else if(currentDesc.choix2 == currentDesc.choix_correct){
-            holder.recap2.setTextColor(Color.GREEN)
+            holder.recap2.setTextColor(Color.BLACK)
+            holder.recap3.setTextColor(Color.BLACK)
         }
         else{
-            holder.recap3.setTextColor(Color.GREEN)
+            if(currentDesc.choix2 == currentDesc.choix_correct){
+                holder.recap2.setTextColor(Color.GREEN)
+                holder.recap1.setTextColor(Color.BLACK)
+                holder.recap3.setTextColor(Color.BLACK)
+            }
+            else{
+                holder.recap3.setTextColor(Color.GREEN)
+                holder.recap2.setTextColor(Color.BLACK)
+                holder.recap1.setTextColor(Color.BLACK)
+            }
         }
+
         if(currentDesc.selectedValue == currentDesc.choix_correct){
-            holder.selectedRecap.setBackgroundColor(Color.GREEN)
+            holder.selectedRecap.setTextColor(Color.GREEN)
         }
         else{
-            holder.selectedRecap.setBackgroundColor(Color.RED)
+            holder.selectedRecap.setTextColor(Color.RED)
         }
         holder.itemView.tag = list[position]
         // holder.text2.setMovementMethod(ScrollingMovementMethod())

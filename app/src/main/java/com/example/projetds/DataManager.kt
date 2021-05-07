@@ -34,7 +34,7 @@ class DataManager(val context: Context) {
             add("On utilise un editor pour SharedPreferences pour ?", "Stockage et Sqlite", "put, remove", "get", "get, put, remove","put, remove")
             add("comment récuperer les preferences spécifiques à l'activité?", "Stockage et Sqlite", "getSharedPreferences('activity1')", "getSharedPreferences()", "getPreferences()","getPreferences()")
             add("Le stockage interne est toujours accessible par ?", "Stockage et Sqlite", "que votre application", "toutes les applications", "méme aprés la desinstallation de l'application","que votre application")
-            add("Le stockage externe est accessible?", "Stockage et Sqlite", "que votre application", "toujours accessible", "accessible méme aprés la desinstallation de l'application","accessible méme aprés la desinstallation de l'application")
+            add("Le stockage externe est accessible?", "Stockage et Sqlite", "que votre application", "toujours accessible", "apres desinstallation de l'application","apres desinstallation de l'application")
             add("pour créer un FileInputStream, On utilise ?", "Stockage et Sqlite", "openFileInput()", "openFile()", "SendStream()","openFileInput()")
             add(" getSharedPreferences(),Accède aux préférences au niveau de:", "Stockage et Sqlite", "l'activité", "l'application", "le contexte","l'application")
             add("pour lire/écrire dans le stockage externe du périphérique,il faut demander l'autorisation?", "Stockage et Sqlite", "Grradle", "AndroidManifest.xml", "ActivityMain","AndroidManifest.xml")
