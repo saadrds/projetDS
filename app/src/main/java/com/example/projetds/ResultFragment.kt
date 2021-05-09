@@ -1,5 +1,6 @@
 package com.example.projetds
 
+import android.media.MediaPlayer
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -45,11 +46,13 @@ class ResultFragment( var myscore: Int ) : Fragment() {
         var image = view?.findViewById<ImageView>(R.id.imageView)
 
         if(myscore <= 5){
+
             score!!.text = " You failed the exam :( , Votre score est :  " + myscore.toString()
             image!!.setImageResource(R.drawable.failed)
             }
 
         else{
+
             score!!.text = " Congraaatss!! Votre score est :  " + myscore.toString()
             image!!.setImageResource(R.drawable.pass)
 

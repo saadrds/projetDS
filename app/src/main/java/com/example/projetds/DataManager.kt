@@ -60,8 +60,8 @@ class DataManager(val context: Context) {
             add("pour ajouter un Fragment ?", "Fragments", "R.id.frag_liste.add(frag1)", "trans.add(R.id.frag_liste, frag1)", "trans.add(frag1)","trans.add(R.id.frag_liste, frag1)")
             add("Un fragment doit avoir un identifiant ?", "Fragments", "Non", "Oui", "pour les fragments de la meme classe","Oui")
             add("Les fragments se comportent comme?", "Fragments", "Threads", "Bundles", "RecyclerView","Threads")
-            add("Les fragments se comportent comme?", "Fragments", "Threads", "Bundles", "RecyclerView","Threads")
-            add("Les fragments se comportent comme?", "Fragments", "Threads", "Bundles", "RecyclerView","Threads")
+            add("Les fragments se comportent comme une activity ?", "Fragments", "OUi", "Non", "comme un Thread","comme un Thread")
+            add("On peut mettre un Fragment dans un autre ?", "Fragments", "Oui", "Non", "Oui,avec une dimension inferieure","Nons")
 
 
 

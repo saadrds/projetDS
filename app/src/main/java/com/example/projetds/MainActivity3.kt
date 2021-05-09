@@ -1,5 +1,6 @@
 package com.example.projetds
 
+import android.media.MediaPlayer
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
@@ -29,6 +30,19 @@ class MainActivity3 : AppCompatActivity() {
         trans.hide(frag1)
         trans.add(R.id.recapFrame,frag)
         trans.commit()
+        if(myFinalscore <= 5){
+            val mp = MediaPlayer.create(this, R.raw.fail_sound)
+            mp.start()
+
+        }
+
+        else{
+            val mp = MediaPlayer.create(this, R.raw.win_sound)
+            mp.start()
+
+
+        }
+
        showRecap.setOnClickListener {
 
             val trans = manager.beginTransaction()
@@ -45,6 +59,8 @@ class MainActivity3 : AppCompatActivity() {
             trans.hide(frag1)
             trans.show(frag)
             trans.commit()
+
+
             showRecap.visibility = View.VISIBLE
             showScore.visibility= View.GONE
         }

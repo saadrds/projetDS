@@ -33,8 +33,8 @@ class MainActivity2 : AppCompatActivity() {
         }
 
         FragmentsButton.setOnClickListener {
-            //val mp = MediaPlayer.create(this, R.raw.b3_click)
-            //mp.start()
+            val mp = MediaPlayer.create(this, R.raw.b3_click)
+            mp.start()
             val intent = Intent(this,MainActivity::class.java)
             intent.putExtra("chapter","Fragments")
             startActivity(intent)
