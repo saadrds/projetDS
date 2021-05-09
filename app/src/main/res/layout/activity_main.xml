@@ -5,7 +5,7 @@
     android:id="@+id/layout_default"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"
+    android:background="@drawable/bt"
     android:orientation="vertical"
     tools:context=".MainActivity">
 

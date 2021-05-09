@@ -4,21 +4,27 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".QuestionFragment">
+    tools:context=".QuestionFragment"
+    android:layout_margin="10dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        >
 
         <TextView
+            android:background="@drawable/border"
             android:id="@+id/question_title"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8sp"
             android:layout_marginLeft="8sp"
+            android:layout_marginBottom="8dp"
+            android:padding="10dp"
             android:layout_marginTop="92dp"
             android:layout_marginEnd="8sp"
-            android:layout_marginRight="8sp"
             android:fontFamily="sans-serif-black"
             android:paddingLeft="20dp"
             android:paddingRight="10dp"

@@ -1,74 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_margin="6dp"
+    android:background="@drawable/border"
+    android:orientation="vertical"
     tools:context=".MainActivity2">
-
-    <Button
-        android:id="@+id/FragmentsButton"
-        android:layout_width="200sp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="Fragments"
-        android:textColor="#0B0A0A"
-        app:backgroundTint="#00BCD4"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.44"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Intent" />
-
-    <Button
-        android:id="@+id/stockage"
-        android:layout_width="200sp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
-        android:text="Stockage et SqLite"
-        android:textColor="#0B0A0A"
-        app:backgroundTint="#00BCD4"
-        app:layout_constraintBottom_toTopOf="@+id/Intent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.44"
-        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textView5"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="48dp"
         android:fontFamily="sans-serif-black"
-        android:text="Welcome to Android Quiz"
+        android:gravity="center"
+        android:text="Please select a chapter"
         android:textColor="#050505"
         android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textView6"
-        android:layout_width="wrap_content"
+
+    <Button
+        android:id="@+id/FragmentsButton"
+        android:layout_width="280sp"
+        android:layout_marginBottom="20dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
-        android:text="Select a Chapter to Start the quiz "
-        android:textColor="#4CAF50"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+        android:layout_gravity="center_vertical|center_horizontal"
+        android:layout_marginTop="100dp"
+        android:text="Fragments"
+        android:textColor="@color/white"
+        app:backgroundTint="#2880bc" />
 
     <Button
         android:id="@+id/Intent"
-        android:layout_width="200sp"
+        android:layout_width="280sp"
+        android:layout_marginBottom="20dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="264dp"
+        android:layout_gravity="center_vertical|center_horizontal"
         android:text="Intent"
-        android:textColor="#0B0A0A"
-        app:backgroundTint="#00BCD4"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.44"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:textColor="@color/white"
+        app:backgroundTint="#2880bc" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <Button
+        android:id="@+id/stockage"
+        android:layout_width="280sp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical|center_horizontal"
+        android:layout_marginBottom="20dp"
+        android:text="Stockage et SqLite"
+        android:textColor="@color/white"
+        app:backgroundTint="#2880bc" />
+
+
+</LinearLayout>
